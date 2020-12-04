@@ -28,6 +28,22 @@ test("name too long", async() => {
     expect(screen.queryByTestId("firstNameError")).not.toBeTruthy();
 })
 
+// FINDBY METHOD:
+// test("name too long2", () => {
+//     render(<ContactForm />);
+
+//     const firstNameInput = screen.getByLabelText(/first name*/i);
+//     const lastNameInput = screen.getByLabelText(/last name*/i);
+    
+    
+//     userEvent.type(firstNameInput, "joshuawefwefwefewfefwwefwefwefefw");
+//     fireEvent.blur(firstNameInput);
+//     userEvent.click(lastNameInput);
+
+//     // Max length is 10:
+//     expect(screen.findByTestId("firstNameError")).toBeTruthy();
+// })
+
 test("form submission outputs corresponding JSON text", async() => {
     render(<ContactForm />);
 
