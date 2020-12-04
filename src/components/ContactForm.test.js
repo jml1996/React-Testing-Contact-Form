@@ -74,13 +74,51 @@ test("form submission outputs corresponding JSON text", async() => {
     const newEmail = screen.queryByText(/abc@jml.com/i);
     const newMessage = screen.queryByText(/hi/i);
 
+    // console.log(newFirstName);
+
     expect(newFirstName).toBeInTheDocument();
     expect(newLastName).toBeInTheDocument();
     expect(newEmail).toBeInTheDocument();
     expect(newMessage).toBeInTheDocument();
-
 })
 
+
+// test("form submission outputs corresponding JSON text2", () => {
+//     render(<ContactForm />);
+
+//     const firstNameInput = screen.getByLabelText(/first name*/i);
+//     const lastNameInput = screen.getByLabelText(/last name*/i);
+//     const emailInput = screen.getByLabelText(/email*/i);
+//     const messageInput = screen.getByLabelText(/message/i);
+
+//     const button = screen.getByRole("button");
+
+//     userEvent.type(firstNameInput, "jo");
+
+//     userEvent.click(lastNameInput);
+//     userEvent.type(lastNameInput, "Svoiln");
+
+//     userEvent.click(emailInput);
+//     userEvent.type(emailInput, "abc@jml.com");
+
+//     userEvent.click(messageInput);
+//     userEvent.type(messageInput, "hi");
+
+//     userEvent.click(button);
+
+//     const newFirstName = screen.findByText(/jo/i);
+//     // const newLastName = screen.findByText(/svoiln/i);
+//     // const newEmail = screen.findByText(/abc@jml.com/i);
+//     // const newMessage = screen.findByText(/hi/i);
+
+//     console.log(newFirstName);
+
+//     expect(newFirstName).toBeInTheDocument();
+//     // expect(newLastName).toBeTruthy();
+//     // expect(newEmail).toBeTruthy();
+//     // expect(newMessage).toBeTruthy();
+
+// })
  
     // userEvent.type(firstNameInput, "joshua");
     // userEvent.type(lastNameInput, "Svoiln");
