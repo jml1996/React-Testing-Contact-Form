@@ -16,12 +16,13 @@ const ContactForm = () => {
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
+            id="firstName"
             name="firstName"
             placeholder="Edd"
-            ref={register({ required: true, maxLength: 3 })}
+            ref={register({ required: true, maxLength: 10 })}
           />
           {errors.firstName && (
-            <p>Looks like there was an error: {errors.firstName.type}</p>
+            <p data-testid="firstNameError">Looks like there was an error: {errors.firstName.type}</p>
           )}
         </div>
 
@@ -43,7 +44,7 @@ const ContactForm = () => {
             Email*
           </label>
           <input name="email" 
-            id="lastName"
+            id="email"
             placeholder="bluebill1049@hotmail.com"
             ref={register({ required: true })} 
           />
@@ -59,12 +60,18 @@ const ContactForm = () => {
             ref={register({ required: false })} 
           />
         </div>
-        {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
-            {JSON.stringify(data, null, 2)}
-          </pre>
-        )}
-        <input type="submit" />
+        <div id="deadbug">
+          {data && (
+            <pre style={{ textAlign: "left", color: "white" }}>
+              {JSON.stringify(data, null, 2)}
+            </pre>
+          )}
+        </div>
+        {/* <input 
+          data-testid="whatKindOfTestingSuiteCantQueryForAnyAttributeExceptDataTestId"
+          type="submit"
+        /> */}
+        <button>Submit</button>
       </form>
     </div>
   );
